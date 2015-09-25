@@ -5,5 +5,5 @@ from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
 
 
 def homepage(request):
-    return render(request, 'home.html')
+    return render(request, 'game/home.html')
 
