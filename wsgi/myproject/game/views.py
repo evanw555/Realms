@@ -4,6 +4,6 @@ from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
 # Create your views here.
 
 
-def helloworld(request):
-    return HttpResponse('Hello, world')
+def homepage(request):
+    return render(request, 'home.html')
 
