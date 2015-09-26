@@ -89,12 +89,14 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 DATABASES = {
     'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'realms',
-            'USER': os.environ['OPENSHIFT_MYSQL_DB_USERNAME'],
-            'PASSWORD': os.environ['OPENSHIFT_MYSQL_DB_PASSWORD'],
-            'HOST': os.environ['OPENSHIFT_MYSQL_DB_HOST'],
-            'PORT': os.environ['OPENSHIFT_MYSQL_DB_PORT'],
+            # 'ENGINE': 'django.db.backends.mysql',
+            # 'NAME': 'realms',
+            # 'USER': os.environ['OPENSHIFT_MYSQL_DB_USERNAME'],
+            # 'PASSWORD': os.environ['OPENSHIFT_MYSQL_DB_PASSWORD'],
+            # 'HOST': os.environ['OPENSHIFT_MYSQL_DB_HOST'],
+            # 'PORT': os.environ['OPENSHIFT_MYSQL_DB_PORT'],
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(DATA_DIR, 'db.sqlite3'),
         }
 }
 
