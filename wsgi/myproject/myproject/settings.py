@@ -91,10 +91,10 @@ DATABASES = {
     'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'realms',
-            'USER': 'adminyVHY7kL',
-            'PASSWORD': 'tChalnpfJJFR',
-            'HOST': os.environ['OPENSHIFT_DB_HOST'],
-            'PORT': os.environ['OPENSHIFT_DB_PORT'],
+            'USER': os.environ['OPENSHIFT_MYSQL_DB_USERNAME'],
+            'PASSWORD': os.environ['OPENSHIFT_MYSQL_DB_PASSWORD'],
+            'HOST': os.environ['OPENSHIFT_MYSQL_DB_HOST'],
+            'PORT': os.environ['OPENSHIFT_MYSQL_DB_PORT'],
         }
 }
 
