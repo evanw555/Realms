@@ -1,0 +1,7 @@
+MySQL 5.5 database added.  Please make note of these credentials:
+
+       Root User: adminyVHY7kL
+   Root Password: tChalnpfJJFR
+   Database Name: realms
+
+Connection URL: mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/
