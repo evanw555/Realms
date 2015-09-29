@@ -29,6 +29,14 @@
 </head>
 <body>
 
+    <script>
+        $('p.test').click(function() {
+            $('p.test').animate({
+                'font-size': '4em'
+            }, 5000, function(){});
+        })
+    </script>
+
     <div class="main-pane">
 
         <h1 class="title">Realms</h1>
@@ -36,50 +44,21 @@
 
         <hr>
 
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Maecenas rutrum suscipit tellus, imperdiet dapibus nunc vulputate a.
-            Phasellus vel quam nunc. Aenean neque nibh, sollicitudin nec orci et,
-            porta tincidunt erat. In mollis efficitur tincidunt. Nullam tincidunt
-            ut orci eget condimentum. In hac habitasse platea dictumst. Fusce odio
-            lorem, pretium vel purus et, lacinia placerat nisi. Aenean in magna a
-            lectus fermentum condimentum ac vehicula tellus. Vivamus hendrerit
-            egestas nisl. Nunc et egestas tellus. Sed nec purus sapien. Proin luctus
-            ex quis neque pharetra pretium.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Maecenas rutrum suscipit tellus, imperdiet dapibus nunc vulputate a.
-            Phasellus vel quam nunc. Aenean neque nibh, sollicitudin nec orci et,
-            porta tincidunt erat. In mollis efficitur tincidunt. Nullam tincidunt
-            ut orci eget condimentum. In hac habitasse platea dictumst. Fusce odio
-            lorem, pretium vel purus et, lacinia placerat nisi. Aenean in magna a
-            lectus fermentum condimentum ac vehicula tellus. Vivamus hendrerit
-            egestas nisl. Nunc et egestas tellus. Sed nec purus sapien. Proin luctus
-            ex quis neque pharetra pretium.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Maecenas rutrum suscipit tellus, imperdiet dapibus nunc vulputate a.
-            Phasellus vel quam nunc. Aenean neque nibh, sollicitudin nec orci et,
-            porta tincidunt erat. In mollis efficitur tincidunt. Nullam tincidunt
-            ut orci eget condimentum. In hac habitasse platea dictumst. Fusce odio
-            lorem, pretium vel purus et, lacinia placerat nisi. Aenean in magna a
-            lectus fermentum condimentum ac vehicula tellus. Vivamus hendrerit
-            egestas nisl. Nunc et egestas tellus. Sed nec purus sapien. Proin luctus
-            ex quis neque pharetra pretium.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Maecenas rutrum suscipit tellus, imperdiet dapibus nunc vulputate a.
-            Phasellus vel quam nunc. Aenean neque nibh, sollicitudin nec orci et,
-            porta tincidunt erat. In mollis efficitur tincidunt. Nullam tincidunt
-            ut orci eget condimentum. In hac habitasse platea dictumst. Fusce odio
-            lorem, pretium vel purus et, lacinia placerat nisi. Aenean in magna a
-            lectus fermentum condimentum ac vehicula tellus. Vivamus hendrerit
-            egestas nisl. Nunc et egestas tellus. Sed nec purus sapien. Proin luctus
-            ex quis neque pharetra pretium.
-        </p>
+        <p class="test">Click me!</p>
+
+        {% for _ in 123456789|make_list %}
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Maecenas rutrum suscipit tellus, imperdiet dapibus nunc vulputate a.
+                Phasellus vel quam nunc. Aenean neque nibh, sollicitudin nec orci et,
+                porta tincidunt erat. In mollis efficitur tincidunt. Nullam tincidunt
+                ut orci eget condimentum. In hac habitasse platea dictumst. Fusce odio
+                lorem, pretium vel purus et, lacinia placerat nisi. Aenean in magna a
+                lectus fermentum condimentum ac vehicula tellus. Vivamus hendrerit
+                egestas nisl. Nunc et egestas tellus. Sed nec purus sapien. Proin luctus
+                ex quis neque pharetra pretium.
+            </p>
+        {% endfor %}
     </div>
 
 </body>
