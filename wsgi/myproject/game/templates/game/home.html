@@ -30,10 +30,12 @@
 <body>
 
     <script>
-        $('p.test').click(function() {
-            $('p.test').animate({
-                'font-size': '3em'
-            }, 2000, function(){});
+        $(document).ready(function() {
+            $('p.test').click(function() {
+                $('p.test').animate({
+                    'font-size': '3em'
+                }, 2000, function(){});
+            });
         });
     </script>
 
