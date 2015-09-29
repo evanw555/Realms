@@ -17,3 +17,6 @@ div.main-pane {
     border: ridge gray 2px;
     background: lightblue;
 }
+img.profile-image {
+    float: left;
+}
