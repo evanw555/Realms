@@ -5,27 +5,7 @@
     <title>Realms: Architects of Expansion</title>
     {% load staticfiles %}
     <script type="text/javascript" src="{% static 'game/jquery-2.1.4.min.js' %}"></script>
-    <style>
-        body {
-            background: url("http://www.freelargeimages.com/wp-content/uploads/2014/12/Landscape_01.jpg") no-repeat fixed;
-        }
-        h1.title {
-            margin: 0;
-            text-align: center;
-            font-size: 3em;
-            font-family: sans-serif;
-        }
-        h1.title.subtitle {
-            font-size: 1em;
-        }
-        div.main-pane {
-            width: 35em;
-            margin: 0 auto 0;
-            padding: 2em;
-            border: ridge gray 2px;
-            background: lightblue;
-        }
-    </style>
+    <link type="text/css" rel="stylesheet" href="{% static 'game/home.css' %}">
 </head>
 <body>
 
@@ -47,6 +27,8 @@
         <hr>
 
         <p class="test">Click me!</p>
+
+        <a href="{% url 'game:about' %}">About the Team</a>
 
         {% for _ in 123456789|make_list %}
             <p>

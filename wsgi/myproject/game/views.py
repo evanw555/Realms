@@ -7,3 +7,7 @@ from django.http import HttpResponse, HttpRequest, HttpResponseRedirect
 def homepage(request):
     return render(request, 'game/home.html')
 
+
+def about(request):
+    return render(request, 'game/about.html')
+

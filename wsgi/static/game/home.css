@@ -1,0 +1,19 @@
+body {
+    background: url("http://www.freelargeimages.com/wp-content/uploads/2014/12/Landscape_01.jpg") no-repeat fixed;
+}
+h1.title {
+    margin: 0;
+    text-align: center;
+    font-size: 3em;
+    font-family: sans-serif;
+}
+h1.title.subtitle {
+    font-size: 1em;
+}
+div.main-pane {
+    width: 35em;
+    margin: 0 auto 0;
+    padding: 2em;
+    border: ridge gray 2px;
+    background: lightblue;
+}
