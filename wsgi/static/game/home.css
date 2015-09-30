@@ -54,7 +54,7 @@ div.main-pane {
     padding: 2em;
     overflow: auto;
     border: ridge gray 2px;
-    background: lightblue;
+    background: #AABDC3;
 }
 div#slideshow {
     padding: 2em 0 2em;
