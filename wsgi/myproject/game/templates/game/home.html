@@ -6,15 +6,17 @@
     {% load staticfiles %}
     <script type="text/javascript" src="{% static 'game/jquery-2.1.4.min.js' %}"></script>
     <link type="text/css" rel="stylesheet" href="{% static 'game/home.css' %}">
+    <script type="text/javascript" src="{% static 'game/slider/js/bjqs-1.3.js' %}"></script>
+    <link type="text/css" rel="stylesheet" href="{% static 'game/slider/bjqs.css' %}" />
 </head>
 <body>
 
     <script>
-        $(document).ready(function() {
-            $('p.test').click(function() {
-                $('p.test').animate({
-                    'font-size': '3em'
-                }, 2000, function(){});
+        jQuery(document).ready(function() {
+            $('#slideshow').bjqs({
+                'height' : 320,
+                'width' : 620,
+                'responsive' : true
             });
         });
     </script>
@@ -26,9 +28,14 @@
 
         <hr>
 
-        <p class="test">Click me!</p>
-
         <a href="{% url 'game:about' %}">About the Team</a>
+
+        <div id="slideshow">
+            <ul class="bjqs">
+                <li>Hey what's up</li>
+                <li>Hello</li>
+            </ul>
+        </div>
 
         {% for _ in 123456789|make_list %}
             <p>
