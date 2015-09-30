@@ -31,9 +31,9 @@ img.profile-image {
     float: left;
 }
 div.profile-text {
-    width: 40%;
+    width: 45%;
     float: left;
-    padding: 2em;
+    padding: 0 2em 2em;
 }
 div.profile-text h2 {
     margin: 0 0 .1em;
