@@ -38,7 +38,6 @@
 body {
     background: url("http://www.freelargeimages.com/wp-content/uploads/2014/12/Landscape_01.jpg") no-repeat fixed;
     font-family: 'Open Sans';
-    text-align: center;
 }
 h1.title {
     margin: 0;
@@ -59,6 +58,9 @@ div.main-pane {
 }
 div#slideshow {
     padding: 2em 0 2em;
+}
+fieldset {
+    text-align: center;
 }
 td {
     border-bottom: 2px solid black;
