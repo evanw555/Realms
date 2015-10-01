@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Realms | Sign Up</title>
+    {% load staticfiles %}
+    {% load url from future %}
+    <link rel="stylesheet" type="text/css" href="{% static 'game/home.css' %}"/>
+</head>
+<body>
+
+<div class="main-pane">
+
+    <h1 class="title">Sign Up for Realms</h1>
+
+    <hr>
+
+    {# if user was signed in when 'sign up' was clicked, notify of logout #}
+    {% if was_logged_in %}
+        <h1 class="title subtitle">NOTICE: You have been signed out for this page.</h1>
+    {% endif %}
+
+    {# if error_message in context #}
+    {% if error_message %}<h1 class="title">{{ error_message }}</h1>{% endif %}
+
+    <br>
+
+    <form action="{% url 'game:signup_attempt' %}" method="post">
+        <fieldset>
+            {% csrf_token %}
+            <legend><b>Sign Up</b></legend>
+
+            <label for="username">Username:</label><br>
+            <input type="text" name="username" id="username"><br>
+
+            <label for="password1">Password:</label><br>
+            <input type="password" name="password1" id="password1"><br>
+
+            <label for="password2">Re-Enter Password:</label><br>
+            <input type="password" name="password2" id="password2"><br>
+
+            <label for="firstname">First Name:</label><br>
+            <input type="text" name="firstname" id="firstname"><br>
+
+            <label for="lastname">Last Name:</label><br>
+            <input type="text" name="lastname" id="lastname"><br>
+
+            <label for="email">(Optional) Email:</label><br>
+            <input type="email" name="email" id="email"><br>
+
+            <input type="submit" value="Sign Up">
+        </fieldset>
+    </form>
+</div>
+
+</body>
+</html>

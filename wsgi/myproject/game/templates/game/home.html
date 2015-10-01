@@ -42,6 +42,35 @@
         </div>
     <br clear="all">
 
+    {# if user logged in on homepage #}
+    {% if error_message %}
+        <h1 class="title subtitle">{{ error_message }}</h1>
+    {% endif %}
+    {% if logged_in %}
+        <fieldset>
+            <legend><b>Login</b></legend>
+
+            <h1 class="title subtitle">Greetings, {{ user.username }}, you are already logged in </h1>
+            <a href="{% url 'game:home' %}">Click here to play!</a>
+            <a href="{% url 'game:home' %}">Not you? Click here to logout</a>
+        </fieldset>
+    {# if user NOT logged in on homepage #}
+    {% else %}
+        <form action="{% url 'game:home' %}" method="post">
+            <fieldset>
+                {% csrf_token %}
+                <legend><b>Login</b></legend>
+
+                <label for="username">Username:</label><br>
+                <input type="text" name="username" id="username"><br>
+                <label for="password">Password:</label><br>
+                <input type="password" name="password" id="password"><br><br>
+
+                <input type="submit" value="Log In">
+            </fieldset>
+        </form>
+    {% endif %}
+
         {% for _ in 123456789|make_list %}
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.

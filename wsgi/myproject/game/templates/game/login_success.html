@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Realms | Successful Login</title>
+    {% load staticfiles %}
+    {% load url from future %}
+    <link rel="stylesheet" type= "text/css" href="{% static 'game/home.css' %}"/>
+</head>
+<body>
+
+    <div class="main-pane">
+        <h1 class="title">Successful Login</h1>
+        <h1 class="title subtitle">Success for user {{ user.username }}</h1>
+
+        <hr>
+
+        <table>
+            <tr>
+                <td>username</td>
+                <td>{{ user.username }}</td>
+            </tr>
+            <tr>
+                <td>first_name</td>
+                <td>{{ user.first_name }}</td>
+            </tr>
+            <tr>
+                <td>last_name</td>
+                <td>{{ user.last_name }}</td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>{{ user.email }}</td>
+            </tr>
+        </table>
+
+        <h2>Click <a href="{% url 'game:home' %}">here</a> to play!</h2>
+
+        <p>Return to <a href="{% url 'game:home' %}">home page</a></p>
+
+        <p><a href="{% url 'game:logout' %}">Click here to log out</a></p>
+    </div>
+
+</body>
+</html>

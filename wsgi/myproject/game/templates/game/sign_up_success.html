@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Realms | Sign Up Success!</title>
+    {% load staticfiles %}
+    {% load url from future %}
+    <link rel = "stylesheet" type = "text/css" href = "{% static 'game/home.css' %}"/>
+</head>
+<body>
+
+<div class="main-pane">
+    <h1 class="title">Sign Up Successful</h1>
+    <h1 class="title subtitle">Welcome to Realms!</h1>
+
+    <hr>
+
+    <p>Welcome to Realms, {{ user.username }}! May your quest prove to be thirst quenching.</p>
+
+    <p>Please return to the home page to log in</p>
+    <p><a href="{% url 'game:main_login' %}">Click here to return</a></p>
+
+</div>
+
+</body>
+</html>

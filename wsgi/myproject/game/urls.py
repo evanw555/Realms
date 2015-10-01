@@ -6,6 +6,10 @@ from . import views
 
 urlpatterns = (
     url(r'^$', views.homepage, name='home'),
-    url(r'^test$', views.homepage),
     url(r'^about$', views.about, name='about'),
+    url(r'^login_attempt/$', views.login_attempt, name='login_attempt'),
+    url(r'^logout/$', views.user_logout, name='logout'),
+    url(r'^signup/$', views.sign_up, name='signup'),
+    url(r'^signup/attempt/$', views.sign_up_attempt, name='signup_attempt'),
+    # url(r'^update_attempt/$', views.update_attempt, name='update_attempt')
 )
