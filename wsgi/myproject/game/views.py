@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db import IntegrityError
+from .models import UserAccount, get_useraccount
 import random
 
 # Create your views here.
@@ -62,13 +63,14 @@ def login_attempt(request):
             # LOG IN USER
             login(request, user_in)
             # if user has no user_account, create one
-            # if UserAccount.objects.filter(user=request.user).count() == 0:
-            #     user_account = UserAccount(user=request.user)
-            #     user_account.save()
+            if get_useraccount(request.user) is None:
+                user_account = UserAccount(user=request.user)
+                user_account.save()
             # render login_success page
             return render(request,
                           'game/login_success.html',
-                          {'user': request.user})
+                          {'user': request.user,
+                           'useraccount': get_useraccount(request.user)})
 
 
 def user_logout(request):
@@ -113,8 +115,8 @@ def sign_up_attempt(request):
             new_user.last_name = request.POST['lastname'].capitalize()
             new_user.save()
             # CREATE USER ACCOUNT
-            # new_user_account = UserAccount(user=new_user)
-            # new_user_account.save()
+            new_user_account = UserAccount(user=new_user)
+            new_user_account.save()
         # if username already taken by another user
         except IntegrityError:
             return render(request,
