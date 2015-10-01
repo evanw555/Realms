@@ -8,7 +8,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
-ON_OPENSHIFT = False  # os.environ.has_key('OPENSHIFT_REPO_DIR')
+ON_OPENSHIFT = True  # os.environ.has_key('OPENSHIFT_REPO_DIR')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
