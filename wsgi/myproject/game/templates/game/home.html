@@ -51,8 +51,8 @@
             <legend><b>Login</b></legend>
 
             <h1 class="title subtitle">Greetings, {{ user.username }}, you are already logged in </h1>
-            <a href="{% url 'game:home' %}">Click here to play!</a>
-            <a href="{% url 'game:home' %}">Not you? Click here to logout</a>
+            <a href="{% url 'game:home' %}"><h1 class="title subtitle">Click here to play!</h1></a>
+            <a href="{% url 'game:logout' %}"><h1 class="title subtitle">Not you? Click here to logout</h1></a>
         </fieldset>
     {# If user NOT logged in on homepage #}
     {% else %}

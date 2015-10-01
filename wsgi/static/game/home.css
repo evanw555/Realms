@@ -59,6 +59,9 @@ div.main-pane {
 div#slideshow {
     padding: 2em 0 2em;
 }
+td {
+    border-bottom: 2px solid black;
+}
 
 
 div.profile {
