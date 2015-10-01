@@ -56,7 +56,7 @@
         </fieldset>
     {# if user NOT logged in on homepage #}
     {% else %}
-        <form action="{% url 'game:home' %}" method="post">
+        <form action="{% url 'game:login_attempt' %}" method="post">
             <fieldset>
                 {% csrf_token %}
                 <legend><b>Login</b></legend>
