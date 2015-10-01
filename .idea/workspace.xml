@@ -46,21 +46,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wsgi/myproject/game/templates/game/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.344828">
-              <caret line="33" column="74" selection-start-line="33" selection-start-column="74" selection-end-line="33" selection-end-column="74" />
+            <state vertical-scroll-proportion="0.5181347">
+              <caret line="33" column="70" selection-start-line="33" selection-start-column="70" selection-end-line="33" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="about.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wsgi/myproject/game/templates/game/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4835924">
-              <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+            <state vertical-scroll-proportion="-15.862069">
+              <caret line="29" column="64" selection-start-line="29" selection-start-column="64" selection-end-line="29" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -130,8 +130,8 @@
         <option value="$PROJECT_DIR$/wsgi/static/game/slider/index.html" />
         <option value="$PROJECT_DIR$/wsgi/static/game/slider/bjqs.css" />
         <option value="$PROJECT_DIR$/wsgi/static/game/home.css" />
-        <option value="$PROJECT_DIR$/wsgi/myproject/game/templates/game/home.html" />
         <option value="$PROJECT_DIR$/wsgi/myproject/game/templates/game/about.html" />
+        <option value="$PROJECT_DIR$/wsgi/myproject/game/templates/game/home.html" />
       </list>
     </option>
   </component>
@@ -846,7 +846,13 @@
       <option name="project" value="LOCAL" />
       <updated>1443662903888</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Fix.">
+      <created>1443663327899</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1443663327899</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -860,9 +866,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1830161" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1830161" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -915,12 +921,12 @@
     <MESSAGE value="Attempted to add profile images for &quot;About&quot; page." />
     <MESSAGE value="&quot;About&quot; page formatting changes." />
     <MESSAGE value="Added JQuery slider UI to homepage, minor URL/formatting fixes." />
-    <MESSAGE value="Fix." />
     <MESSAGE value="Compressing stylesheets into fewer files." />
     <MESSAGE value="Added John's profile." />
     <MESSAGE value="Added public disclaimers." />
     <MESSAGE value="Push to GitHub." />
-    <option name="LAST_COMMIT_MESSAGE" value="Push to GitHub." />
+    <MESSAGE value="Fix." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1217,18 +1223,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wsgi/myproject/game/templates/game/home.html">
+    <entry file="file://$PROJECT_DIR$/wsgi/myproject/game/templates/game/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.344828">
-          <caret line="33" column="74" selection-start-line="33" selection-start-column="74" selection-end-line="33" selection-end-column="74" />
+        <state vertical-scroll-proportion="-15.862069">
+          <caret line="29" column="64" selection-start-line="29" selection-start-column="64" selection-end-line="29" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wsgi/myproject/game/templates/game/about.html">
+    <entry file="file://$PROJECT_DIR$/wsgi/myproject/game/templates/game/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4835924">
-          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.5181347">
+          <caret line="33" column="70" selection-start-line="33" selection-start-column="70" selection-end-line="33" selection-end-column="70" />
           <folding />
         </state>
       </provider>
