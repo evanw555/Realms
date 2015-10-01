@@ -13,7 +13,7 @@ def get_useraccount(user):
     :rtype: UserAccount
     """
     try:
-        return UserAccount.models.get(username=user.username)
+        return UserAccount.objects.get(username=user.username)
     except:
         return None
 
