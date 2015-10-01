@@ -42,7 +42,7 @@
         </div>
     <br clear="all">
 
-    {# if user logged in on homepage #}
+    {# If user logged in on homepage #}
     {% if error_message %}
         <h1 class="title subtitle">{{ error_message }}</h1>
     {% endif %}
@@ -54,7 +54,7 @@
             <a href="{% url 'game:home' %}">Click here to play!</a>
             <a href="{% url 'game:home' %}">Not you? Click here to logout</a>
         </fieldset>
-    {# if user NOT logged in on homepage #}
+    {# If user NOT logged in on homepage #}
     {% else %}
         <form action="{% url 'game:login_attempt' %}" method="post">
             <fieldset>
