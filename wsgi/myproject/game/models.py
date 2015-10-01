@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 # Model util functions
 
 
-def get_useraccount(user):
+def get_useraccount(u):
     """Get the UserAccount associated with a User.
     Returns None if none exists.
     :param user: User whose UserAccount to search for
@@ -13,7 +13,7 @@ def get_useraccount(user):
     :rtype: UserAccount
     """
     try:
-        return UserAccount.objects.get(username=user.username)
+        return UserAccount.objects.get(user=u)
     except:
         return None
 
