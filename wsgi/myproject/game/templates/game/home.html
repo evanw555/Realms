@@ -71,6 +71,8 @@
         </form>
     {% endif %}
 
+    <h1 class="title subtitle">Sign up for Realms <a href="{% url 'game:signup' %}">here</a>!</h1>
+
         {% for _ in 123456789|make_list %}
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -84,6 +86,10 @@
                 ex quis neque pharetra pretium.
             </p>
         {% endfor %}
+
+    <span style="text-align: center;">
+        <a href="admin">Django Administration</a> | <a href="phpmyadmin">Database Administration</a>
+    </span>
     </div>
 
 </body>
