@@ -40,56 +40,57 @@
                 <li><img src="{% static 'game/slider/img/banner03.jpg' %}" title="Lorem Ipsum..."></li>
             </ul>
         </div>
-    <br clear="all">
+        <br clear="all">
 
-    {# If user logged in on homepage #}
-    {% if error_message %}
-        <h1 class="title subtitle">{{ error_message }}</h1>
-    {% endif %}
-    {% if logged_in %}
-        <fieldset>
-            <legend><b>Login</b></legend>
-
-            <h1 class="title subtitle">Greetings, {{ user.username }}, you are already logged in </h1>
-            <a href="{% url 'game:home' %}"><h1 class="title subtitle">Click here to play!</h1></a>
-            <a href="{% url 'game:logout' %}"><h1 class="title subtitle">Not you? Click here to logout</h1></a>
-        </fieldset>
-    {# If user NOT logged in on homepage #}
-    {% else %}
-        <form action="{% url 'game:login_attempt' %}" method="post">
+        {# If user logged in on homepage #}
+        {% if error_message %}
+            <h1 class="title subtitle">{{ error_message }}</h1>
+        {% endif %}
+        {% if logged_in %}
             <fieldset>
-                {% csrf_token %}
                 <legend><b>Login</b></legend>
 
-                <label for="username">Username:</label><br>
-                <input type="text" name="username" id="username"><br>
-                <label for="password">Password:</label><br>
-                <input type="password" name="password" id="password"><br><br>
-
-                <input type="submit" value="Log In">
+                <h1 class="title subtitle">Greetings, {{ user.username }}, you are already logged in </h1>
+                <a href="{% url 'game:home' %}"><h1 class="title subtitle">Click here to play!</h1></a>
+                <a href="{% url 'game:logout' %}"><h1 class="title subtitle">Not you? Click here to logout</h1></a>
             </fieldset>
-        </form>
-    {% endif %}
+        {# If user NOT logged in on homepage #}
+        {% else %}
+            <form action="{% url 'game:login_attempt' %}" method="post">
+                <fieldset>
+                    {% csrf_token %}
+                    <legend><b>Login</b></legend>
 
-    <h1 class="title subtitle">Sign up for Realms <a href="{% url 'game:signup' %}">here</a>!</h1>
+                    <label for="username">Username:</label><br>
+                    <input type="text" name="username" id="username"><br>
+                    <label for="password">Password:</label><br>
+                    <input type="password" name="password" id="password"><br><br>
 
-        {% for _ in 123456789|make_list %}
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas rutrum suscipit tellus, imperdiet dapibus nunc vulputate a.
-                Phasellus vel quam nunc. Aenean neque nibh, sollicitudin nec orci et,
-                porta tincidunt erat. In mollis efficitur tincidunt. Nullam tincidunt
-                ut orci eget condimentum. In hac habitasse platea dictumst. Fusce odio
-                lorem, pretium vel purus et, lacinia placerat nisi. Aenean in magna a
-                lectus fermentum condimentum ac vehicula tellus. Vivamus hendrerit
-                egestas nisl. Nunc et egestas tellus. Sed nec purus sapien. Proin luctus
-                ex quis neque pharetra pretium.
-            </p>
-        {% endfor %}
+                    <input type="submit" value="Log In">
+                </fieldset>
+            </form>
+        {% endif %}
 
-    <span style="text-align: center;">
-        <a href="admin">Django Administration</a> | <a href="phpmyadmin">Database Administration</a>
-    </span>
+        <h1 class="title subtitle">Sign up for Realms <a href="{% url 'game:signup' %}">here</a>!</h1>
+
+            {% for _ in 123456789|make_list %}
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Maecenas rutrum suscipit tellus, imperdiet dapibus nunc vulputate a.
+                    Phasellus vel quam nunc. Aenean neque nibh, sollicitudin nec orci et,
+                    porta tincidunt erat. In mollis efficitur tincidunt. Nullam tincidunt
+                    ut orci eget condimentum. In hac habitasse platea dictumst. Fusce odio
+                    lorem, pretium vel purus et, lacinia placerat nisi. Aenean in magna a
+                    lectus fermentum condimentum ac vehicula tellus. Vivamus hendrerit
+                    egestas nisl. Nunc et egestas tellus. Sed nec purus sapien. Proin luctus
+                    ex quis neque pharetra pretium.
+                </p>
+            {% endfor %}
+
+        <div style="text-align: center;">
+            <a href="admin">Django Administration</a> | <a href="phpmyadmin">Database Administration</a>
+        </div>
+
     </div>
 
 </body>
