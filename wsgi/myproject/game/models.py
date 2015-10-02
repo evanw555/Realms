@@ -28,9 +28,18 @@ class UserAccount(models.Model):
     def __str__(self):
         return str(self.user.username)
 
+    class Meta:
+        managed = True
+        app_label = 'game'
+
 
 class Realm(models.Model):
     name = models.CharField(max_length=32, default='Default')
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        managed = True
+        app_label = 'game'
+
