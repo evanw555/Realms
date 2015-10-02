@@ -11,5 +11,6 @@ urlpatterns = (
     url(r'^logout/$', views.user_logout, name='logout'),
     url(r'^signup/$', views.sign_up, name='signup'),
     url(r'^signup/attempt/$', views.sign_up_attempt, name='signup_attempt'),
+    url(r'^realm_select/$', views.realm_select, name='realm_select')
     # url(r'^update_attempt/$', views.update_attempt, name='update_attempt')
 )

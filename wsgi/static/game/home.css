@@ -66,7 +66,7 @@ td {
     border-bottom: 2px solid black;
 }
 
-
+/* About styling */
 div.profile {
     clear: both;
     overflow: auto;
@@ -89,4 +89,16 @@ div.profile-text h3 {
     margin: 0;
     font-size: 1em;
     font-style: oblique;
+}
+
+/* Realm Select styling */
+div.realm-option {
+    border: 2px ridge darkgray;
+    padding: 1em;
+}
+h1.realm-title {
+    margin: 0;
+    text-align: left;
+    font-size: 1.5em;
+    font-family: 'Open Sans';
 }

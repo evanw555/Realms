@@ -5,10 +5,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db import IntegrityError
-from .models import UserAccount, get_useraccount
+from .models import UserAccount, Realm, get_useraccount
 import random
-
-# Create your views here.
 
 
 def homepage(request):
@@ -173,3 +171,11 @@ def sign_up_attempt(request):
 #                       {'user': request.user,
 #                        'current_app': 'login'})
 #
+
+
+@login_required
+def realm_select(request):
+    return render(request,
+                  'game/realm_select.html',
+                  {'realm_options': Realm.objects.all()})
+

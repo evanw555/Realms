@@ -134,3 +134,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(WSGI_DIR, 'static')
+
+# Authentication settings
+
+LOGIN_URL = 'game:home'
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+

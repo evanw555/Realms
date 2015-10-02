@@ -28,3 +28,9 @@ class UserAccount(models.Model):
     def __str__(self):
         return str(self.user.username)
 
+
+class Realm(models.Model):
+    name = models.CharField(max_length=32, default='Default')
+
+    def __str__(self):
+        return self.name
