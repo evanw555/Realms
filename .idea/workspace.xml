@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2c6f0bd-c45b-4ed0-8320-9d5cb75e9be5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="e2c6f0bd-c45b-4ed0-8320-9d5cb75e9be5" name="Default" comment="" />
     <ignored path="realms.git.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -36,21 +34,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wsgi/myproject/game/templates/game/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.7586207">
-              <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
+            <state vertical-scroll-proportion="1.1053541">
+              <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sign_up.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sign_up.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wsgi/myproject/game/templates/game/sign_up.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34542313">
-              <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+            <state vertical-scroll-proportion="-11.034483">
+              <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -175,8 +173,8 @@
         <option value="$PROJECT_DIR$/wsgi/myproject/game/views.py" />
         <option value="$PROJECT_DIR$/wsgi/static/game/home.css" />
         <option value="$PROJECT_DIR$/wsgi/myproject/game/templates/game/about.html" />
-        <option value="$PROJECT_DIR$/wsgi/myproject/game/templates/game/home.html" />
         <option value="$PROJECT_DIR$/wsgi/myproject/game/templates/game/sign_up.html" />
+        <option value="$PROJECT_DIR$/wsgi/myproject/game/templates/game/home.html" />
       </list>
     </option>
   </component>
@@ -663,12 +661,6 @@
       <option name="number" value="Default" />
       <updated>1443139607428</updated>
     </task>
-    <task id="LOCAL-00012" summary="Fix.">
-      <created>1443143275775</created>
-      <option name="number" value="00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1443143275775</updated>
-    </task>
     <task id="LOCAL-00013" summary="templates dir moved.">
       <created>1443143623270</created>
       <option name="number" value="00013" />
@@ -957,7 +949,13 @@
       <option name="project" value="LOCAL" />
       <updated>1444085787497</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Finally migrated to MySQL 5.5, red error messages.">
+      <created>1444086051942</created>
+      <option name="number" value="00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1444086051942</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1446,18 +1444,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wsgi/myproject/game/templates/game/home.html">
+    <entry file="file://$PROJECT_DIR$/wsgi/myproject/game/templates/game/sign_up.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7586207">
-          <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
+        <state vertical-scroll-proportion="-11.034483">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wsgi/myproject/game/templates/game/sign_up.html">
+    <entry file="file://$PROJECT_DIR$/wsgi/myproject/game/templates/game/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34542313">
-          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+        <state vertical-scroll-proportion="1.1053541">
+          <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
           <folding />
         </state>
       </provider>
