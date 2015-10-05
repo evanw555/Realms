@@ -186,3 +186,4 @@ def realm_select(request):
                   'game/realm_select.html',
                   {'available_realms': Realm.objects.all()})
 
+
