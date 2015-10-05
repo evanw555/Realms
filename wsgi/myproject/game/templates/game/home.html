@@ -43,9 +43,7 @@
         <br clear="all">
 
         {# If user logged in on homepage #}
-        {% if error_message %}
-            <h1 class="title subtitle error">{{ error_message }}</h1>
-        {% endif %}
+        {% if error_message %}<h1 class="title subtitle error">{{ error_message }}</h1>{% endif %}
         {% if logged_in %}
             <fieldset>
                 <legend><b>Login</b></legend>
