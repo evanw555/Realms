@@ -48,6 +48,9 @@ h1.title {
 h1.title.subtitle {
     font-size: 1em;
 }
+h1.error {
+    color: red;
+}
 div.main-pane {
     width: 35em;
     margin: 0 auto 0;

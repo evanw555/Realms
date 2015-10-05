@@ -184,5 +184,5 @@ def realm_select(request):
     # END DEBUG
     return render(request,
                   'game/realm_select.html',
-                  {'realm_options': Realm.objects.all()})
+                  {'available_realms': Realm.objects.all()})
 
