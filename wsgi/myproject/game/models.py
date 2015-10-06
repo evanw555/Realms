@@ -60,7 +60,7 @@ class Zone(models.Model):
     realm = models.ForeignKey(Realm)
     row = models.PositiveSmallIntegerField(default=0)
     column = models.PositiveSmallIntegerField(default=0)
-    type = models.PositiveSmallIntegerField(default=1)
+    type = models.PositiveSmallIntegerField(default=0)
 
     def __str__(self):
         return '<{}@{},{}: {}>'.format(str(self.realm), str(self.row), str(self.column), self.str_type())
