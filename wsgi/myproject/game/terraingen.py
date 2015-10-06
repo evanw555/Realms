@@ -4,7 +4,7 @@ from .models import Realm
 
 def build_realm_terrain_random(realm, height, width):
     # if realm already has terrain, delete all
-    realm.zone_set.delete()
+    realm.zone_set.all().delete()
     # build realm terrain randomly
     for r in range(height):
         for c in range(width):
