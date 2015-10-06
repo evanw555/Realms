@@ -97,6 +97,7 @@ div.profile-text h3 {
 /* Realm Select styling */
 div.realm-option {
     border: 2px ridge darkgray;
+    margin: 1em 0 1em;
     padding: 1em;
 }
 h1.realm-title {

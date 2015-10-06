@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from .models import UserAccount, Realm, get_useraccount
+from .terraingen import build_realm_terrain_random
 import random
 
 
@@ -176,12 +177,11 @@ def sign_up_attempt(request):
 @login_required
 def realm_select(request):
     # DEBUG
-    if random.randint(0, 1) == 0:
-        new_realm = Realm(name='Realm {}'.format(random.randint(0, 1000)))
-        new_realm.save()
-    elif Realm.objects.all().count() > 0:
-        Realm.objects.all()[0].delete()
-    # END DEBUG
+    if Realm.objects.all().count() > 0:
+        Realm.objects.all().delete()
+    new_realm = Realm(name='Realm {}'.format(random.randint(0, 1000)))
+    build_realm_terrain_random(new_realm, 2, 4)
+    new_realm.save()
     return render(request,
                   'game/realm_select.html',
                   {'available_realms': Realm.objects.all()})
