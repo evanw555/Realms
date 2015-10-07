@@ -186,3 +186,10 @@ def realm_select(request):
                   'game/realm_select.html',
                   {'available_realms': Realm.objects.all()})
 
+
+@login_required
+def realm_view(request):
+    return render(request,
+                  'game/realm.html',
+                  {'realm': Realm.objects.get(pk=request.GET['r'])})
+

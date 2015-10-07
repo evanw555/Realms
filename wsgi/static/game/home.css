@@ -98,6 +98,7 @@ div.profile-text h3 {
 div.realm-option {
     border: 2px ridge darkgray;
     padding: 1em;
+    margin: 1em 0 1em;
 }
 h1.realm-title {
     margin: 0;

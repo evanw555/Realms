@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Realms | Realm Select</title>
+    <title>Realms | Play</title>
     {% load staticfiles %}
     {% load url from future %}
     <link rel="stylesheet" type= "text/css" href="{% static 'game/home.css' %}"/>
@@ -10,16 +10,11 @@
 <body>
 
     <div class="main-pane">
-        <h1 class="title">Select a Realm</h1>
+        <h1 class="title">Realm</h1>
 
         <hr>
 
-        {% for realm in available_realms %}
-            <div class="realm-option">
-                <h1 class="realm-title">{{ realm.name }}</h1>
-                <a href="{% url 'game:realm' %}?r={{ realm.pk }}">Enter</a>
-            </div>
-        {% endfor %}
+        <h1 class="title">You have selected realm {{ realm }}</h1>
 
         <p>Return to <a href="{% url 'game:home' %}">home page</a></p>
 
