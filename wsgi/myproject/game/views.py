@@ -191,13 +191,14 @@ def realm_select(request):
 def realm_view(request):
     realm = Realm.objects.get(pk=request.GET['r'])
     # DEBUG
+    realm.zone_set.all().delete()
     if realm.zone_set.count() == 0:
-        for r in range(4):
-            for c in range(6):
+        for r in range(8):
+            for c in range(12):
                 realm.zone_set.create(row=r, column=c, type=random.randint(0, 1))
     # END DEBUG
     return render(request,
                   'game/realm.html',
                   {'realm': realm,
-                   'zone_types': [[realm.get_zone(r, c).type for c in range(6)] for r in range(4)]})
+                   'zone_types': [[realm.get_zone(r, c).type for c in range(12)] for r in range(8)]})
 

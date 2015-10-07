@@ -30,8 +30,7 @@
                         tile.setLocationXY(32*c, 32*r);
                         tile.setHeight(32);
                         tile.setWidth(32);
-                        tile.getStroke().setWeight(2);
-                        tile.getStroke().setColor("rgb(0,"+(zone_types[r][c]==1?255:0)+
+                        tile.getFill().setColor("rgb(16,"+(zone_types[r][c]==1?255:0)+
                                                     ","+(zone_types[r][c]==0?255:0)+")");
                         myPanel.addElement(tile);
                     }
