@@ -189,7 +189,15 @@ def realm_select(request):
 
 @login_required
 def realm_view(request):
+    realm = Realm.objects.get(pk=request.GET['r'])
+    # DEBUG
+    if realm.zone_set.count() == 0:
+        for r in range(4):
+            for c in range(6):
+                realm.zone_set.create(row=r, column=c, type=random.randint(0, 1))
+    # END DEBUG
     return render(request,
                   'game/realm.html',
-                  {'realm': Realm.objects.get(pk=request.GET['r'])})
+                  {'realm': realm,
+                   'zone_types': [[realm.get_zone(r, c).type for c in range(6)] for r in range(4)]})
 

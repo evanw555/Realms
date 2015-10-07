@@ -36,6 +36,12 @@ class UserAccount(models.Model):
 class Realm(models.Model):
     name = models.CharField(max_length=32, default='Default')
 
+    def get_zone(self, r, c):
+        try:
+            return self.zone_set.get(row=r, column=c)
+        except:
+            return None
+
     def __str__(self):
         return self.name
 
