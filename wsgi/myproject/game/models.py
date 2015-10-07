@@ -43,3 +43,17 @@ class Realm(models.Model):
         managed = True
         app_label = 'game'
 
+
+class Zone(models.Model):
+    realm = models.ForeignKey(Realm)
+    row = models.PositiveSmallIntegerField(default=0)
+    column = models.PositiveSmallIntegerField(default=0)
+    type = models.PositiveSmallIntegerField(default=0)
+
+    def __str__(self):
+        return '<Zone {},{}@{} [{}]>'.format(str(self.realm), str(self.row), str(self.column), str(self.type))
+
+    class Meta:
+        managed = True
+        app_label = 'game'
+
