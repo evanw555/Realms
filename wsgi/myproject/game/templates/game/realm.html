@@ -21,19 +21,20 @@
         <script>
             try{
                 var myPanel = new jsgl.Panel(document.getElementById("canvas"));
-                var zone_types = "{{ zone_types }}";
+                var zone_types = {{ zone_types }};
 
                   /* Create circle and modify it */
-                for(var i = 0; i < 10; i++){
-                    var circle = myPanel.createCircle();
-                    circle.setCenterLocationXY(Math.floor(Math.random() * 400), Math.floor(Math.random() * 400));
-                    circle.setRadius(Math.floor(Math.random() * 40) + 10);
-                    circle.getStroke().setWeight(5);
-                    circle.getStroke().setColor("rgb("+Math.floor(Math.random() * 256)+
-                                                ","+Math.floor(Math.random() * 256)+
-                                                ","+Math.floor(Math.random() * 256)+")");
-                    myPanel.addElement(circle);
-                }
+                for(var r = 0; r < zone_types.length; r++)
+                    for(var c = 0; c < zone_types[r].length; c++){
+                        var tile = myPanel.createRectangle();
+                        tile.setCenterLocationXY(32*c, 32*r);
+                        tile.setHeight(32);
+                        tile.setWidth(32);
+                        tile.getStroke().setWeight(2);
+                        tile.getStroke().setColor("rgb(0,"+(zone_types[r][c]==1?255:0)+
+                                                    ","+(zone_types[r][c]==0?255:0)+")");
+                        myPanel.addElement(tile);
+                    }
                 var label = myPanel.createLabel();
                 label.setText("Welcome to {{ realm.name }}!");
                 label.setLocationXY(Math.floor(Math.random() * 400), Math.floor(Math.random() * 400));
