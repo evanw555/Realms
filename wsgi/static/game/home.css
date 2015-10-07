@@ -74,6 +74,7 @@ div.profile {
     clear: both;
     overflow: auto;
     padding: 1em;
+    display: none;
 }
 img.profile-image {
     width: 40%;

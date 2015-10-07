@@ -9,6 +9,14 @@
 </head>
 <body>
 
+    <script>
+        jQuery(document).ready(function() {
+            $('.profile-image').load(function() {
+                $(this).parent().fadeIn('slow');
+            });
+        });
+    </script>
+
     <div class="main-pane">
 
         <h1 class="title">About the Team</h1>
