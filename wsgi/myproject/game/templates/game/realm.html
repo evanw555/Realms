@@ -5,6 +5,7 @@
     <title>Realms | Play</title>
     {% load staticfiles %}
     {% load url from future %}
+    <script type="text/javascript" src="{% static 'game/jsgl.min.js' %}"></script>
     <link rel="stylesheet" type= "text/css" href="{% static 'game/home.css' %}"/>
 </head>
 <body>
@@ -15,6 +16,26 @@
         <hr>
 
         <h1 class="title subtitle">You have selected realm {{ realm }}</h1>
+
+        <div id="canvas" style="width: 640px; height: 480px"></div>
+        <script>
+            try{
+                myPanel = new jsgl.Panel(document.getElementById("panel"));
+
+                  /* Start drawing! */
+
+                  /* Create circle and modify it */
+                  circle = myPanel.createCircle();
+                  circle.setCenterLocationXY(50,50);
+                  circle.setRadius(30);
+                  circle.getStroke().setWeight(5);
+                  circle.getStroke().setColor("rgb(255,0,0)");
+                  myPanel.addElement(circle);
+            }catch(err){
+                console.log("JSGL error");
+            }
+
+        </script>
 
         <p>Return to <a href="{% url 'game:home' %}">home page</a></p>
 
