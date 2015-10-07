@@ -74,11 +74,11 @@ div.profile {
     clear: both;
     overflow: auto;
     padding: 1em;
-    display: none;
 }
 img.profile-image {
     width: 40%;
     float: left;
+    opacity: 0;
 }
 div.profile-text {
     width: 45%;
