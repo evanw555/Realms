@@ -34,10 +34,10 @@ $(document).ready(function() {
                 tile.setHeight(tileSize);
                 tile.setWidth(tileSize);
                 if(zoneTypes[r][c] == 0){
-                    var meshing = (r > 0 || zoneTypes[r-1][c] != 0 ? 'N' : '') +
-                                    (c < realmWidth-1 || zoneTypes[r][c+1] != 0 ? 'E' : '') +
-                                    (r < realmHeight-1 || zoneTypes[r+1][c] != 0 ? 'S' : '') +
-                                    (c > 0 || zoneTypes[r][c-1] != 0 ? 'W' : '');
+                    var meshing = (r == 0 || zoneTypes[r-1][c] == 0 ? '' : 'N') +
+                                    (c == realmWidth-1 || zoneTypes[r][c+1] == 0 ? '' : 'E') +
+                                    (r == realmHeight-1 || zoneTypes[r+1][c] == 0 ? '' : 'S') +
+                                    (c == 0 || zoneTypes[r][c-1] == 0 ? '' : 'W');
                     tile.setUrl('/static/game/zones/0_'+meshing+'.png');
                 }else
                     tile.setUrl('/static/game/zones/'+zoneTypes[r][c]+'.png');
