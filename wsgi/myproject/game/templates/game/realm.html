@@ -7,50 +7,23 @@
     {% load url from future %}
     <script type="text/javascript" src="{% static 'game/jquery-2.1.4.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'game/jsgl.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'game/realmgraphics.js' %}"></script>
     <link rel="stylesheet" type= "text/css" href="{% static 'game/home.css' %}"/>
 </head>
 <body>
+    <script>
+        load_context_data({{ zone_types }});
+    </script>
 
     <div class="main-pane">
         <h1 class="title">Realm</h1>
-
         <hr>
-
         <h1 class="title subtitle">You have selected realm {{ realm }}</h1>
 
         <div id="canvas" style="width: 100%; height: 480px"></div>
-        <script>
-            try{
-                var myPanel = new jsgl.Panel(document.getElementById("canvas"));
-                var zone_types = {{ zone_types }};
 
-                  /* Create circle and modify it */
-                for(var r = 0; r < zone_types.length; r++)
-                    for(var c = 0; c < zone_types[r].length; c++){
-                        var tile = myPanel.createRectangle();
-                        tile.setLocationXY(32*c, 32*r);
-                        tile.setHeight(32);
-                        tile.setWidth(32);
-                        tile.getStroke().setWeight(0);
-                        tile.getFill().setColor("rgb(16,"+(zone_types[r][c]==1?255:0)+
-                                                    ","+(zone_types[r][c]==0?255:0)+")");
-                        myPanel.addElement(tile);
-                    }
-                var label = myPanel.createLabel();
-                label.setText("Welcome to {{ realm.name }}!");
-                label.setLocationXY(Math.floor(Math.random() * 400), Math.floor(Math.random() * 400));
-                label.setBold(true);
-                label.setFontFamily("sans-serif");
-                label.setFontSize(24);
-                myPanel.addElement(label);
-            }catch(err){
-                console.log("JSGL error");
-            }
-
-        </script>
 
         <p>Return to <a href="{% url 'game:home' %}">home page</a></p>
-
         <p><a href="{% url 'game:logout' %}">Click here to log out</a></p>
     </div>
 
