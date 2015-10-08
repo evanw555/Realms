@@ -22,9 +22,9 @@ def generate_random(realm):
             else:
                 realm.zone_set.create(row=r, column=c,
                                       type=random.choice([
-                                          realm.get_zone(row=r-1, column=c).type,
-                                          realm.get_zone(row=r, column=c-1).type,
-                                          realm.get_zone(row=r-1, column=c-1).type,
+                                          realm.get_zone(r-1, c).type,
+                                          realm.get_zone(r, c-1).type,
+                                          realm.get_zone(r-1, c-1).type,
                                           random.randint(0, 1)
                                       ]))
     realm.save()
