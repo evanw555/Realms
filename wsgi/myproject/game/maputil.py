@@ -25,6 +25,6 @@ def generate_random(realm):
                                           realm.get_zone(r-1, c).type,
                                           realm.get_zone(r, c-1).type,
                                           realm.get_zone(r-1, c-1).type,
-                                          random.randint(0, 1)
+                                          0, 1, 1,
                                       ]))
     realm.save()

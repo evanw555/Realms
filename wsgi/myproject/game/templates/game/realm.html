@@ -5,6 +5,7 @@
     <title>Realms | Play</title>
     {% load staticfiles %}
     {% load url from future %}
+    <script type="text/javascript" src="{% static 'game/jquery-2.1.4.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'game/jsgl.min.js' %}"></script>
     <link rel="stylesheet" type= "text/css" href="{% static 'game/home.css' %}"/>
 </head>
@@ -30,6 +31,7 @@
                         tile.setLocationXY(32*c, 32*r);
                         tile.setHeight(32);
                         tile.setWidth(32);
+                        tile.getStroke().setWeight(0);
                         tile.getFill().setColor("rgb(16,"+(zone_types[r][c]==1?255:0)+
                                                     ","+(zone_types[r][c]==0?255:0)+")");
                         myPanel.addElement(tile);
