@@ -16,7 +16,7 @@
     </script>
 
     <div class="main-pane">
-        <h1 class="title">Realm {{ realm }}</h1>
+        <h1 class="title">{{ realm }}</h1>
         <hr>
 
         <div id="canvas" style="width: {{ canvas_width }}px; height: {{ canvas_height }}px"></div>
@@ -25,7 +25,8 @@
 
 
         <p>Return to <a href="{% url 'game:home' %}">home page</a></p>
-        <p><a href="{% url 'game:logout' %}">Click here to log out</a></p>
+        <p>Return to <a href="{% url 'game:realm_select' %}">realm select</a></p>
+        <p>Click <a href="{% url 'game:logout' %}">here</a> to log out</p>
     </div>
 
 </body>

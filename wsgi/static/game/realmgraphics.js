@@ -36,14 +36,14 @@ $(document).ready(function() {
         hoverBox = myPanel.createRectangle();
         hoverBox.setHeight(tileSize);
         hoverBox.setWidth(tileSize);
+        hoverBox.setFill(jsgl.fill.DISABLED);
         hoverBox.getStroke().setOpacity(.2);
-        hoverBox.getFill().setOpacity(0.0);
-        hoverBox.getStroke().setWeight(2);
+        hoverBox.getStroke().setWeight(3);
 
         selectBox = myPanel.createRectangle();
         selectBox.setHeight(tileSize);
         selectBox.setWidth(tileSize);
-        selectBox.getFill().setOpacity(0.0);
+        selectBox.setFill(jsgl.fill.DISABLED);
         selectBox.getStroke().setWeight(2);
 
           /* Create circle and modify it */
