@@ -18,6 +18,15 @@ def get_useraccount(u):
         return None
 
 
+def delete_realm(realm):
+    """Deletes a realm safely by deleting
+    the zones from its zone set as well.
+    :param realm: Realm model to delete.
+    """
+    realm.zone_set.all().delete()
+    realm.delete()
+
+
 # Models
 
 

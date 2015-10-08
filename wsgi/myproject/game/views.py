@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db import IntegrityError
-from .models import UserAccount, Realm, get_useraccount
+from .models import UserAccount, Realm, get_useraccount, delete_realm
 from . import maputil
 import random
 
@@ -182,7 +182,7 @@ def realm_select(request):
         new_realm.save()
         maputil.generate_random(new_realm)
     elif Realm.objects.all().count() > 0:
-        Realm.objects.all()[0].delete()
+        delete_realm(Realm.objects.all()[0])
     # END DEBUG
     return render(request,
                   'game/realm_select.html',
