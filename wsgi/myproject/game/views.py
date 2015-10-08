@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from .models import UserAccount, Realm, get_useraccount
+from . import maputil
 import random
 
 
@@ -178,6 +179,7 @@ def realm_select(request):
     # DEBUG
     if random.randint(0, 1) == 0:
         new_realm = Realm(name='Realm {}'.format(random.randint(0, 1000)))
+        maputil.generate_random(new_realm)
         new_realm.save()
     elif Realm.objects.all().count() > 0:
         Realm.objects.all()[0].delete()
@@ -190,15 +192,8 @@ def realm_select(request):
 @login_required
 def realm_view(request):
     realm = Realm.objects.get(pk=request.GET['r'])
-    # DEBUG
-    realm.zone_set.all().delete()
-    if realm.zone_set.count() == 0:
-        for r in range(8):
-            for c in range(12):
-                realm.zone_set.create(row=r, column=c, type=random.randint(0, 1))
-    # END DEBUG
     return render(request,
                   'game/realm.html',
                   {'realm': realm,
-                   'zone_types': [[realm.get_zone(r, c).type for c in range(12)] for r in range(8)]})
+                   'zone_types': [[realm.get_zone(r, c).type for c in range(maputil.REALM_WIDTH)] for r in range(maputil.REALM_HEIGHT)]})
 
