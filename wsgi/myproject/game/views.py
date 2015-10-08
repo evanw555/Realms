@@ -179,8 +179,8 @@ def realm_select(request):
     # DEBUG
     if random.randint(0, 1) == 0:
         new_realm = Realm(name='Realm {}'.format(random.randint(0, 1000)))
-        maputil.generate_random(new_realm)
         new_realm.save()
+        maputil.generate_random(new_realm)
     elif Realm.objects.all().count() > 0:
         Realm.objects.all()[0].delete()
     # END DEBUG
