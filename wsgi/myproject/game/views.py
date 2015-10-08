@@ -195,5 +195,8 @@ def realm_view(request):
     return render(request,
                   'game/realm.html',
                   {'realm': realm,
-                   'zone_types': [[realm.get_zone(r, c).type for c in range(maputil.REALM_WIDTH)] for r in range(maputil.REALM_HEIGHT)]})
+                   'zone_types': [[realm.get_zone(r, c).type for c in range(maputil.REALM_WIDTH)] for r in range(maputil.REALM_HEIGHT)],
+                   'canvas_width': maputil.REALM_WIDTH * maputil.TILE_SIZE,
+                   'canvas_height': maputil.REALM_HEIGHT * maputil.TILE_SIZE,
+                   'tile_size': maputil.TILE_SIZE})
 

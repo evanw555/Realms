@@ -6,6 +6,7 @@ import random
 
 REALM_HEIGHT = 10
 REALM_WIDTH = 16
+TILE_SIZE = 32
 
 # Util Functions
 
