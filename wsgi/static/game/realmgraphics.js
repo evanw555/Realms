@@ -14,7 +14,6 @@ $(document).ready(function() {
         hoverBox.setWidth(32);
         hoverBox.getFill().setOpacity(0.0);
         hoverBox.getStroke().setWeight(3);
-        myPanel.addElement(hoverBox);
 
           /* Create circle and modify it */
         for(var r = 0; r < zoneTypes.length; r++)
@@ -26,11 +25,12 @@ $(document).ready(function() {
                 tile.getStroke().setWeight(0);
                 tile.getFill().setColor("rgb(16,"+(zoneTypes[r][c]==1?255:0)+
                                             ","+(zoneTypes[r][c]==0?255:0)+")");
-                tile.addMouseOverListener(function() {
-                    hoverBox.setLocationXY(32*c, 32*r);
+                tile.addMouseOverListener(function(event) {
+                    hoverBox.setLocationXY(event.getSourceElement().getX(), event.getSourceElement().getY());
                 });
                 myPanel.addElement(tile);
             }
+        myPanel.addElement(hoverBox);
         var label = myPanel.createLabel();
         label.setText("Welcome to this Realm!");
         label.setLocationXY(Math.floor(Math.random() * 400), Math.floor(Math.random() * 400));
