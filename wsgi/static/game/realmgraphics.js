@@ -48,6 +48,6 @@ $(document).ready(function() {
             }
         myPanel.addElement(hoverBox);
     }catch(err){
-        console.log("JSGL error");
+        console.log(err);
     }
 });
