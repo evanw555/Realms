@@ -112,3 +112,7 @@ h1.realm-title {
 div#canvas {
     margin: 2em auto 2em;
 }
+div#zone-info {
+    border: 2px ridge lightgray;
+    padding: 1em;
+}

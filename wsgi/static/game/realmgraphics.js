@@ -1,11 +1,26 @@
 
-var myPanel, hoverBox;
+var myPanel, hoverBox, selectBox;
 var zoneTypes = [], tileSize;
 
 
 function load_context_data(_zoneTypes, _tileSize) {
     zoneTypes = _zoneTypes;
     tileSize = _tileSize;
+}
+
+function make_hoverBox_callback(row, column) {
+    function callback() {
+        hoverBox.setLocationXY(column*tileSize, row*tileSize);
+    }
+    return callback;
+}
+
+function make_selectBox_callback(row, column) {
+    function callback() {
+        selectBox.setLocationXY(column*tileSize, row*tileSize);
+        $('#zone-info').text('Selected: zone@r'+row+',c'+column)
+    }
+    return callback;
 }
 
 $(document).ready(function() {
@@ -15,14 +30,21 @@ $(document).ready(function() {
             hoverBox.getStroke().setOpacity(0);
         });
         myPanel.addMouseOverListener(function() {
-            hoverBox.getStroke().setOpacity(1);
+            hoverBox.getStroke().setOpacity(.2);
         });
 
         hoverBox = myPanel.createRectangle();
         hoverBox.setHeight(tileSize);
         hoverBox.setWidth(tileSize);
+        hoverBox.getStroke().setOpacity(.2);
         hoverBox.getFill().setOpacity(0.0);
-        hoverBox.getStroke().setWeight(3);
+        hoverBox.getStroke().setWeight(2);
+
+        selectBox = myPanel.createRectangle();
+        selectBox.setHeight(tileSize);
+        selectBox.setWidth(tileSize);
+        selectBox.getFill().setOpacity(0.0);
+        selectBox.getStroke().setWeight(2);
 
           /* Create circle and modify it */
         var realmHeight = zoneTypes.length;
@@ -41,12 +63,12 @@ $(document).ready(function() {
                     tile.setUrl('/static/game/zones/0_'+meshing+'.png');
                 }else
                     tile.setUrl('/static/game/zones/'+zoneTypes[r][c]+'.png');
-                tile.addMouseOverListener(function(event) {
-                    hoverBox.setLocationXY(event.getSourceElement().getX(), event.getSourceElement().getY());
-                });
+                tile.addMouseOverListener(make_hoverBox_callback(r, c));
+                tile.addClickListener(make_selectBox_callback(r, c));
                 myPanel.addElement(tile);
             }
         myPanel.addElement(hoverBox);
+        myPanel.addElement(selectBox);
     }catch(err){
         console.log(err);
     }

@@ -177,12 +177,12 @@ def sign_up_attempt(request):
 @login_required
 def realm_select(request):
     # DEBUG
-    if random.randint(0, 1) == 0:
-        new_realm = Realm(name='Realm {}'.format(random.randint(0, 1000)))
+    if Realm.objects.all().count() > 0:
+        delete_realm(Realm.objects.all()[0])
+    if Realm.objects.all().count() == 0:
+        new_realm = Realm(name='Realm {}'.format([chr(random.randint(48, 90)) for i in range(3)]))
         new_realm.save()
         maputil.generate_random(new_realm)
-    elif Realm.objects.all().count() > 0:
-        delete_realm(Realm.objects.all()[0])
     # END DEBUG
     return render(request,
                   'game/realm_select.html',
