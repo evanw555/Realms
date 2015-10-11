@@ -4,8 +4,10 @@ import random
 
 # Global Variables
 
-REALM_HEIGHT = 10
-REALM_WIDTH = 16
+REALM_HEIGHT = 20
+REALM_WIDTH = 32
+VIEW_HEIGHT = 10
+VIEW_WIDTH = 16
 TILE_SIZE = 32
 
 # Util Functions
@@ -18,10 +20,10 @@ def generate_random(realm):
     # make tenative grid of zone types
     map = []
     for r in range(REALM_HEIGHT):
-        row = []
+        temp_row = []
         for c in range(REALM_WIDTH):
-            row.append(0)
-        map.append(row)
+            temp_row.append(0)
+        map.append(temp_row)
     # randomly generate water and land
     for r in range(REALM_HEIGHT):
         for c in range(REALM_WIDTH):
@@ -37,7 +39,7 @@ def generate_random(realm):
     # randomly generate forests and mountains
 
     def recursive_set(row, column, type, chance, reduction):
-        if row < 0 or row >= REALM_HEIGHT or column < 0 or column >= REALM_WIDTH:
+        if map[row][column] == 0 or row < 0 or row >= REALM_HEIGHT or column < 0 or column >= REALM_WIDTH:
             return
         if random.randint(0, 100) <= chance:
             map[row][column] = type
