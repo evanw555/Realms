@@ -1,5 +1,5 @@
 
-var VIEW_HEIGHT, VIEW_WIDTH;
+var VIEW_HEIGHT, VIEW_WIDTH, REALM_HEIGHT, REALM_WIDTH;
 var row_offset, col_offset;
 var myPanel, hoverBox, selectBox;
 var zoneTypes = [], tileSize;
@@ -11,6 +11,8 @@ function load_context_data(_zoneTypes, _tileSize, _viewHeight, _viewWidth) {
     tileSize = _tileSize;
     VIEW_HEIGHT = _viewHeight;
     VIEW_WIDTH = _viewWidth;
+    REALM_HEIGHT = zoneTypes.length;
+    REALM_WIDTH = zoneTypes[0].length;
 }
 
 function make_hoverBox_callback(row, column) {
@@ -82,8 +84,8 @@ function set_view(r_offset, c_offset) {
             var tile = tiles[r-r_offset][c-c_offset];
             if (zoneTypes[r][c] == 0) {
                 var meshing = (r == 0 || zoneTypes[r - 1][c] == 0 ? '' : 'N') +
-                    (c == VIEW_WIDTH - 1 || zoneTypes[r][c + 1] == 0 ? '' : 'E') +
-                    (r == VIEW_HEIGHT - 1 || zoneTypes[r + 1][c] == 0 ? '' : 'S') +
+                    (c == REALM_WIDTH - 1 || zoneTypes[r][c + 1] == 0 ? '' : 'E') +
+                    (r == REALM_HEIGHT - 1 || zoneTypes[r + 1][c] == 0 ? '' : 'S') +
                     (c == 0 || zoneTypes[r][c - 1] == 0 ? '' : 'W');
                 tile.setUrl('/static/game/zones/0_' + meshing + '.png');
             } else
