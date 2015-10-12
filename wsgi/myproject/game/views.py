@@ -182,7 +182,7 @@ def realm_select(request):
     if Realm.objects.all().count() == 0:
         new_realm = Realm(name='Realm {}'.format(''.join([chr(random.randint(48, 90)) for i in range(3)])))
         new_realm.save()
-        maputil.generate_random(new_realm)
+        maputil.generate_terrain(new_realm, maputil.random_generation)
     # END DEBUG
     return render(request,
                   'game/realm_select.html',

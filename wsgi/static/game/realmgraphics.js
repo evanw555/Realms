@@ -1,6 +1,6 @@
 
 var VIEW_HEIGHT, VIEW_WIDTH, REALM_HEIGHT, REALM_WIDTH;
-var row_offset, col_offset;
+var rowOffset, colOffset;
 var myPanel, hoverBox, selectBox;
 var zoneTypes = [], tileSize;
 var tiles = [];
@@ -25,7 +25,7 @@ function make_hoverBox_callback(row, column) {
 function make_selectBox_callback(row, column) {
     function callback() {
         selectBox.setLocationXY(column*tileSize, row*tileSize);
-        $('#zone-info').text('Selected: zone@r'+(row+row_offset)+',c'+(column+col_offset))
+        $('#zone-info').text('Selected: zone@r'+(row+rowOffset)+',c'+(column+colOffset))
     }
     return callback;
 }
@@ -76,9 +76,9 @@ function initialize_panel() {
     }
 }
 
-function set_view(r_offset, c_offset) {
-    row_offset = r_offset;
-    col_offset = c_offset;
+function set_view(r_offset, c_offset, resetBoxes) {
+    rowOffset = r_offset;
+    colOffset = c_offset;
     for(var r = r_offset; r < r_offset+VIEW_HEIGHT; r++)
         for(var c = c_offset; c < c_offset+VIEW_WIDTH; c++){
             var tile = tiles[r-r_offset][c-c_offset];
@@ -94,16 +94,21 @@ function set_view(r_offset, c_offset) {
 }
 
 function move_view(dr, dc) {
-    if(row_offset+dr < 0 || row_offset+dr >= REALM_HEIGHT-VIEW_HEIGHT ||
-            col_offset+dc < 0 || col_offset+dc >= REALM_WIDTH-VIEW_WIDTH)
+    // hide the hover and selection boxes and clear the info box
+    hoverBox.setLocationXY(-2*tileSize, -2*tileSize);
+    selectBox.setLocationXY(-2*tileSize, -2*tileSize);
+    $('#zone-info').text('');
+    // move the view window, if possible
+    if(rowOffset+dr < 0 || rowOffset+dr >= REALM_HEIGHT-VIEW_HEIGHT ||
+            colOffset+dc < 0 || colOffset+dc >= REALM_WIDTH-VIEW_WIDTH)
         console.log('move_view ERROR: out of bounds');
     else
-        set_view(row_offset+dr, col_offset+dc);
+        set_view(rowOffset+dr, colOffset+dc);
 }
 
 $(document).ready(function() {
-    row_offset = 0;
-    col_offset = 0;
+    rowOffset = 0;
+    colOffset = 0;
 
     initialize_panel();
     set_view(0, 0);
