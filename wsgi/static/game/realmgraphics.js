@@ -93,6 +93,14 @@ function set_view(r_offset, c_offset) {
         }
 }
 
+function move_view(dr, dc) {
+    if(row_offset+dr < 0 || row_offset+dr >= REALM_HEIGHT-VIEW_HEIGHT ||
+            col_offset+dc < 0 || col_offset+dc >= REALM_WIDTH-VIEW_WIDTH)
+        console.log('move_view ERROR: out of bounds');
+    else
+        set_view(row_offset+dr, col_offset+dc);
+}
+
 $(document).ready(function() {
     row_offset = 0;
     col_offset = 0;
