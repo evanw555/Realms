@@ -39,7 +39,7 @@ def generate_random(realm):
     # randomly generate forests and mountains
 
     def recursive_set(row, column, type, chance, reduction):
-        if map[row][column] == 0 or row < 0 or row >= REALM_HEIGHT or column < 0 or column >= REALM_WIDTH:
+        if row < 0 or row >= REALM_HEIGHT or column < 0 or column >= REALM_WIDTH:
             return
         if random.randint(0, 100) <= chance:
             map[row][column] = type
