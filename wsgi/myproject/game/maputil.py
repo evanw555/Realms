@@ -13,7 +13,15 @@ TILE_SIZE = 32
 # Util Functions
 
 
-def generate_terrain(realm, method):
+def generate_terrain(realm, algorithm):
+    """
+    General function for generating terrain in a given realm.
+    Parameter algorithm is the function (in this file) that is
+    used to generate the terrain.
+    :param realm: Realm model instance to be transformed.
+    :param algorithm: Function used to generate terrain.
+    :return: None
+    """
     # if realm already has zones, delete them
     if realm.zone_set.all().count() != 0:
         realm.zone_set.all().delete()
@@ -25,7 +33,7 @@ def generate_terrain(realm, method):
             temp_row.append(0)
         type_map.append(temp_row)
     # apply generation method to this map
-    method(type_map)
+    algorithm(type_map)
     # save map to realm model
     for r in range(REALM_HEIGHT):
         for c in range(REALM_WIDTH):
@@ -33,7 +41,18 @@ def generate_terrain(realm, method):
     realm.save()
 
 
+# Terrain Generation Algorithms
+# =============================
+# add algorithms here to be used in terrain generation.
+
+
 def random_generation(type_map):
+    """
+    Simple terrain generation algorithm.
+    :param type_map: 2d grid of integers that is mutated
+    to represent typemap of terrain.
+    :return: None
+    """
     # randomly generate water and land
     for r in range(REALM_HEIGHT):
         for c in range(REALM_WIDTH):
@@ -46,9 +65,11 @@ def random_generation(type_map):
                     type_map[r-1][c-1],
                     0, 1, 1,
                 ])
-    # randomly generate forests and mountains
+
+    # define helper functions to help in generation of forests and mountains
 
     def recursive_set(row, column, zone_type, chance, reduction):
+        """ Helper function for placing contiguous clusters of zones."""
         if row < 0 or row >= REALM_HEIGHT or column < 0 or column >= REALM_WIDTH:
             return
         if random.randint(0, 100) <= chance:
@@ -58,14 +79,20 @@ def random_generation(type_map):
             recursive_set(row+1, column, zone_type, chance // reduction, reduction)
             recursive_set(row, column+1, zone_type, chance // reduction, reduction)
 
-    r, c = random.randint(0, REALM_HEIGHT-1), random.randint(0, REALM_WIDTH-1)
-    while type_map[r][c] != 0:
-        r, c = random.randint(0, REALM_HEIGHT-1), random.randint(0, REALM_WIDTH-1)
-    recursive_set(r, c, 2, 100, 1.6)
+    def random_location_by_type(pref_type):
+        """ Helper function to randomly find coordinates of zone with preferred type."""
+        row, col = random.randint(0, REALM_HEIGHT-1), random.randint(0, REALM_WIDTH-1)
+        while type_map[row][col] != pref_type:
+            row, col = random.randint(0, REALM_HEIGHT-1), random.randint(0, REALM_WIDTH-1)
+        return row, col
 
-    r, c = random.randint(0, REALM_HEIGHT-1), random.randint(0, REALM_WIDTH-1)
-    while type_map[r][c] != 0:
-        r, c = random.randint(0, REALM_HEIGHT-1), random.randint(0, REALM_WIDTH-1)
-    recursive_set(r, c, 3, 100, 2.0)
+    # place forests
+    for _ in range(5):
+        r, c = random_location_by_type(1)
+        recursive_set(r, c, 2, 100, 1.6)
+    # place mountain ranges
+    for _ in range(4):
+        r, c = random_location_by_type(1)
+        recursive_set(r, c, 3, 100, 2.0)
 
 
